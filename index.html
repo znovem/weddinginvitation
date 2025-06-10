@@ -33,6 +33,27 @@
 </head>
 <body>
     <div class="container">
+        <div class="maps">
+            <script>
+                function initMap() {
+                    // Map options
+                    const options = {
+                    zoom: 10,
+                    center: { lat: -8.70368132266602, lng: 115.2145416807156 } // GKMI Ekklesia Bali
+                    };
+
+                    // New map
+                    const map = new google.maps.Map(document.getElementById("map"), options);
+                }
+            </script>
+
+            <!-- Load Google Maps JavaScript API -->
+            <script
+                async
+                defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZiYLpZa3jY3OKf9TtseMeVrLzY5omS8o&callback=initMap">
+            </script>
+        </div>
         <div class="ImageHeader">
             <img src="assets/RDInvitation1.png" alt="Wedding Image" style="width:100%; border-radius: 15px;">
             <img src="assets/RDInvitation2.png" alt="Wedding Image" style="width:100%; border-radius: 15px; margin-top: 0px;">
