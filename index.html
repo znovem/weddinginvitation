@@ -1,68 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        
-        
-        .button:hover {
-            background-color: #218838;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #777;
-        }
-        
-    </style>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style_index.css">
+  <title>Amplop dengan Surat di Dalam</title>
+  
 </head>
 <body>
-    <div class="container">
-        <div class="maps">
-            <script>
-                function initMap() {
-                    // Map options
-                    const options = {
-                    zoom: 10,
-                    center: { lat: -8.70368132266602, lng: 115.2145416807156 } // GKMI Ekklesia Bali
-                    };
 
-                    // New map
-                    const map = new google.maps.Map(document.getElementById("map"), options);
-                }
-            </script>
+<div class="envelope-wrapper" onclick="openEnvelope(this)">
+  <div class="envelope"></div>
+  <div class="flap"></div>
+  <div class="letter">You're Invited</div>
+  
+</div>
+<h1 class="welcome">Touch to Open</h1>
+<script>
+  function openEnvelope(el) {
+    if (!el.classList.contains("open")) {
+      el.classList.add("open");
 
-            <!-- Load Google Maps JavaScript API -->
-            <script
-                async
-                defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZiYLpZa3jY3OKf9TtseMeVrLzY5omS8o&callback=initMap">
-            </script>
-        </div>
-        <div class="ImageHeader">
-            <img src="assets/RDInvitation1.png" alt="Wedding Image" style="width:100%; border-radius: 15px;">
-            <img src="assets/RDInvitation2.png" alt="Wedding Image" style="width:100%; border-radius: 15px; margin-top: 0px;">
-            <img src="assets/Blue and Gold Floral Wedding Invitation.png" alt="Wedding Image" style="width:100%; border-radius: 15px; margin-top: 0px;">
-        </div>
+      // Redirect setelah animasi selesai
+      setTimeout(() => {
+        window.location.href = "undangan.html"; // Ganti dengan halaman tujuan
+      }, 2000); // Tambah waktu agar letter sempat muncul
+    }
+  }
+</script>
 
-        <div class="footer">
-            &copy; 2025 - Bali Happily Ever After. All rights reserved.
-        </div>
-    </div>
-</body> 
+</body>
 </html>
