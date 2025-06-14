@@ -1,0 +1,117 @@
+
+body {
+    margin: 0;
+    background: #153b65;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.welcome {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    color: #E9C46A;
+    margin-top: 100px;
+    animation: fadeIn 1.5s ease-in-out;
+    text-shadow: black 0px 0px 10px, black 0px 0px 20px, black 0px 0px 30px;
+}
+
+.envelope-wrapper {
+    position: relative;
+    margin-top: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 340px;
+    height: 240px;
+    cursor: pointer;
+    perspective: 1200px;
+    transform-origin: center;
+    transition: transform 1s ease;
+    box-shadow: 0 20px 40px rgba(0, 0.8, 0, 0.9);
+    border-radius: 8px;
+}
+
+.envelope-wrapper.open {
+    animation: zoomIn 1.5s forwards ease-in-out;
+}
+
+@keyframes zoomIn {
+    0% {
+    transform: scale(1);
+    }
+    100% {
+    transform: scale(1.5) translateY(0px);
+    }
+}
+
+.envelope {
+    position: relative;
+    width: 99%;
+    height: 100%;
+    background: wheat;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.envelope::before,
+.envelope::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    background: white;
+    z-index: -1;
+}
+
+.envelope::before {
+    left: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+}
+
+.envelope::after {
+    right: 0;
+    clip-path: polygon(100% 0, 0% 50%, 0% 100%, 100% 100%);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: wheat;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    transform-origin: top;
+    transition: transform 1s ease;
+    z-index: 1;
+}
+
+.open .flap {
+    transform: rotateX(180deg);
+}
+
+.letter {
+    position: absolute;
+    width: 90%;
+    height: 40%;
+    top: 40%;
+    left: 5%;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 1s ease;
+    z-index: 2;
+}
+
+.open .letter {
+    opacity: 1;
+    transform: translateY(-120%);
+    transition-delay: 0.7s;
+    z-index: 2;
+}

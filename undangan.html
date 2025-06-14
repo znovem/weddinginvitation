@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Undangan</title>
+        <link rel="stylesheet" href="style_undangan.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link href="https://fonts.googleapis.com/css?family=Allura&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bellefair&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cinzel Decorative&display=swap" rel="stylesheet">
+        
+    </head>
+
+
+    <body>
+        <audio class="lagu" id="lagu" autoplay loop>
+            <source src="assets/wedding.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                var audio = document.getElementById('lagu');
+                audio.play().catch(function(){});
+            });
+        </script>
+        
+        <div class="container">
+
+            <div class="cover">
+                <img class="fotocover" src="assets/RD0.jpg" alt="Cover Image">
+                <img class="logocincin" src="assets/Ring.png" alt="Logo">
+                <div class="text-cover">
+                    <h1 style="font-family: 'Allura'; font-size: 45px; margin-bottom: 5px; line-height: 1;">Hendrico</h1>
+                    <h3 style="font-family: 'Allura'; font-size: 25px; margin: 0; line-height: 1;">&</h3>
+                    <h1 style="font-family: 'Allura'; font-size: 45px; margin-top: 5px; margin-bottom: 5px; line-height: 1;">Devy</h1>
+                </div>
+            </div>
+
+
+            <div class="pemberkatan"></div>
+            <div class="resepsi"></div>
+            <div class="galerry"></div>
+            
+            
+
+            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.870838260305!2d115.21200967563324!3d-8.703813888697047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2410020cf00f3%3A0x32ea187ce1edf85b!2sGKMI%20Ekklesia!5e0!3m2!1sen!2sid!4v1749833250010!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+            <div class="footer"> &copy; 2025 - Bali Happily Ever After. All rights reserved.</div>
+       </div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body> 
+</html>
